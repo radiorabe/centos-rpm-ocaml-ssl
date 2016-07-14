@@ -10,7 +10,7 @@ Source0:  https://github.com/savonet/ocaml-ssl/releases/download/0.5.2/ocaml-ssl
 BuildRequires: ocaml
 BuildRequires: ocaml-findlib
 BuildRequires: ocaml-bytes
-BuildRequires: libssl-devel
+BuildRequires: openssl-devel
 
 %prep
 %setup -q 
