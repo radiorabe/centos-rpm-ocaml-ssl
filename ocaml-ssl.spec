@@ -10,6 +10,7 @@ Source0:  https://github.com/savonet/ocaml-ssl/releases/download/0.5.2/ocaml-ssl
 BuildRequires: ocaml
 BuildRequires: ocaml-findlib
 BuildRequires: ocaml-bytes
+BuildRequires: ocaml-camlidl
 BuildRequires: openssl-devel
 
 %prep
@@ -24,10 +25,10 @@ make all
 %install
 export DESTDIR=%{buildroot}
 export OCAMLFIND_DESTDIR=%{buildroot}$(ocamlfind printconf destdir)
-export OCAMLFIND_LDCONF=ignore
 export DLLDIR=$OCAMLFIND_DESTDIR/stublibs
 
 install -d $OCAMLFIND_DESTDIR/%{ocamlpck}
+install -d $OCAMLFIND_DESTDIR/stublibs
 make install
 
 %files
